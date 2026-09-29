@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS cinebook;
+USE cinebook;
+
+DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS shows;
+DROP TABLE IF EXISTS theatres;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS seats;
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    movie_name VARCHAR(255) NOT NULL,
+    show_time VARCHAR(50) NOT NULL,
+    booking_date DATE NOT NULL,
+    num_members INT NOT NULL,
+    status VARCHAR(50) DEFAULT 'CONFIRMED',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
