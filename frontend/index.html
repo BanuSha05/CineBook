@@ -1,13 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theatre Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Ticket Booking</h1>
+        
+        <div id="booking-section">
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Customer Name:</label>
+                    <input type="text" id="customer_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Movie:</label>
+                    <select id="movie" required>
+                        <option value="">Select Movie</option>
+                        <option value="Inception">Inception</option>
+                        <option value="Interstellar">Interstellar</option>
+                        <option value="Avatar">Avatar</option>
+                        <option value="Avengers: Endgame">Avengers: Endgame</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date:</label>
+                    <input type="date" id="booking_date" required>
+                </div>
+                <div class="form-group">
+                    <label>Show Time:</label>
+                    <select id="show_time" required>
+                        <option value="">Select Time</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="01:00 PM">01:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="07:00 PM">07:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Number of Members:</label>
+                    <select id="members" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Book Ticket</button>
+            </form>
+
+            <button id="view-bookings-btn" class="secondary-btn">View Bookings</button>
+            
+            <div id="booking-result" style="display: none;">
+                <h2>Booking Successful</h2>
+                <p><strong>Booking ID:</strong> <span id="res-id"></span></p>
+                <p><strong>Customer Name:</strong> <span id="res-name"></span></p>
+                <p><strong>Movie:</strong> <span id="res-movie"></span></p>
+                <p><strong>Date:</strong> <span id="res-date"></span></p>
+                <p><strong>Time:</strong> <span id="res-time"></span></p>
+                <p><strong>Number of Members:</strong> <span id="res-members"></span></p>
+                <p><strong>Status:</strong> <span id="res-status"></span></p>
+            </div>
+        </div>
+
+        <div id="bookings-list-section" style="display: none;">
+            <h2>All Bookings</h2>
+            <button id="back-to-booking-btn" class="secondary-btn">Back to Booking</button>
+            <table id="bookings-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Name</th>
+                        <th>Movie</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Members</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
